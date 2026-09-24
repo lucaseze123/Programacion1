@@ -6,15 +6,15 @@ public class Main_Principal {
 		// 1. Instanciamos las Marcas
 		Marca marcaIntel = new Marca();
 		marcaIntel.nombre = "Intel";
-		marcaIntel.calidad = 4.8f;
+		marcaIntel.calidad = 2.8f;
 
 		Marca marcaAsus = new Marca();
 		marcaAsus.nombre = "ASUS";
-		marcaAsus.calidad = 4.5f;
+		marcaAsus.calidad = 3.5f;
 
 		Marca marcaKingston = new Marca();
 		marcaKingston.nombre = "Kingston";
-		marcaKingston.calidad = 4.2f;
+		marcaKingston.calidad = 1.2f;
 
 		Marca marcaNvidia = new Marca();
 		marcaNvidia.nombre = "NVIDIA";
