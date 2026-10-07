@@ -42,9 +42,15 @@ public class Juego extends InterfaceJuego {
 
 		if (this.pelota != null) {
 			for (int i = 0; i < pelota.length; i++) {
-				this.pelota[i].dibujar(entorno);
-				if (bandera)
+				if (this.pelota[i] != null) {
+					this.pelota[i].dibujar(entorno);
 					this.pelota[i].caer();
+
+					if (pelota[i].getY() + pelota[i].getRadio() > this.barra.getY() - this.barra.getAlto() / 2) {
+						this.pelota[i] = null;
+					}
+				}
+
 			}
 		}
 		this.pelotita.dibujar(entorno);
@@ -58,10 +64,11 @@ public class Juego extends InterfaceJuego {
 				&& (this.barra.getX() - this.barra.getAncho() / 2) > 0) {
 			this.barra.moverIzquierda();
 		}
-		if (pelotita.getY() + pelotita.getRadio() > this.barra.getY() - this.barra.getAlto() / 2) {
-			this.pelotita.rebotar();
-
-		}
+//		if (pelotita.getY() + pelotita.getRadio() > this.barra.getY() - this.barra.getAlto() / 2) {
+//			this.pelotita=null;
+//			this.barra=null;
+//
+//		}
 		// Procesamiento de un instante de tiempo
 		// ...
 
