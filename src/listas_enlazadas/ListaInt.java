@@ -13,6 +13,21 @@ public class ListaInt {
 		System.out.println("]");
 	}
 
+	public int maximo() {
+		if(this.primero==null) {
+			return 0;
+		}
+		int max = this.primero.elemento;
+		NodoInt actual = this.primero;
+		while (actual != null) {
+			if (max < actual.elemento) {
+				max = actual.elemento;
+			}
+			actual = actual.siguiente;
+		}
+		return max;
+	}
+
 	public boolean pertenece(int e) {
 		if (primero != null) {
 			if (primero.elemento == e) {
@@ -48,6 +63,43 @@ public class ListaInt {
 		}
 	}
 
+	public int iesimo(int i) {
+		int posicion = 0;
+		int cont = 0;
+		if (cont == i) {
+			posicion = this.primero.elemento;
+		}
+		else {
+			posicion=-1;
+		}
+		NodoInt actual = this.primero;
+		while (actual != null) {
+			cont++;
+			actual = actual.siguiente;
+			if (cont == i) {
+				posicion = actual.elemento;
+			}
+		}
+
+		return posicion;
+	}
+
+	public void quitarPorIndice(int i) {
+		int cont = 0;
+		if (cont == i) {
+			this.primero = this.primero.siguiente;
+		}
+		NodoInt actual = this.primero;
+		while (actual != null) {
+			cont++;
+			if (cont == i) {
+				actual.siguiente = actual.siguiente.siguiente;
+			}
+			actual = actual.siguiente;
+		}
+
+	}
+
 	public static void main(String[] args) {
 		ListaInt lista = new ListaInt();
 		NodoInt nodo1 = new NodoInt();
@@ -70,9 +122,8 @@ public class ListaInt {
 		nodo6.elemento = 27;
 		nodo6.siguiente = null;
 		lista.imprimir();
-		lista.quitar(10);
+		lista.quitarPorIndice(5);
 		lista.imprimir();
-		// System.out.println(lista.pertenece(17));
 	}
 
 }
