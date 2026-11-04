@@ -1,5 +1,7 @@
 package modelo_2_Parcial;
 
+import java.util.LinkedList;
+
 public class Main_Principal {
 
 	static Marca crearMarca(String nombre, float calidad) {
@@ -71,7 +73,9 @@ public class Main_Principal {
 		Modulo7 moduloSinAltaGama = crearModulo(new Laboratorio[] { lab3 });
 
 		// Pruebas
-
+		LinkedList<Componente> lista = new LinkedList<>();
+		lista = modulo.componentesPorMarca(generica);
+		System.out.println(lista.toString());
 	}
 
 }

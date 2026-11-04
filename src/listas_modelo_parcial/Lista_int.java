@@ -100,8 +100,8 @@ public class Lista_int {
 		nodo6.siguiente = null;
 		
 		lista.imprimir();
-		//lista.descomponerPares();
-		lista.agregarLargoMesetas();
+		lista.descomponerPares();
+		//lista.agregarLargoMesetas();
 		lista.imprimir();
 		
 
